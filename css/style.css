@@ -1048,6 +1048,7 @@ button {
     padding: 1.5rem;
     box-shadow: 0 3px 10px rgba(0,0,0,0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
 .benefit-card:hover {
@@ -1056,16 +1057,22 @@ button {
 }
 
 .benefit-icon {
-    background-color: rgba(var(--primary-rgb), 0.1);
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    background-color: rgba(var(--primary-rgb), 0.1);
+    border-radius: 50%;
     color: var(--primary-color);
+    font-size: 1.8rem;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+    transform: scale(1.05);
+    background-color: rgba(var(--primary-rgb), 0.15);
 }
 
 .benefit-card h3 {
@@ -1089,30 +1096,40 @@ button {
     display: flex;
     background-color: white;
     border-radius: 8px;
-    overflow: hidden;
+    padding: 1.5rem;
     box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .step-number {
-    background-color: var(--primary-color);
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
-    min-width: 60px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50%;
+    font-weight: 600;
+    flex-shrink: 0;
 }
 
 .step-content {
-    padding: 1rem;
     flex: 1;
 }
 
 .step-content h3 {
     margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+    color: var(--dark-color);
 }
 
 .delivery-section {
@@ -1585,13 +1602,13 @@ button {
 
 /* FAQ Section Styling */
 .faq-section {
-padding: 4rem 0;
-background-color: var(--light-color);
+    padding: 4rem 0;
+    background-color: var(--light-color);
 }
 
 .faq-section h2 {
-text-align: center;
-margin-bottom: 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
 .faq-grid {
@@ -1640,4 +1657,177 @@ gap: 2rem;
     .faq-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Global Modern Styling - Applied to All Pages to Match Contact Page */
+
+/* Modern Section Styling */
+.intro-section,
+.benefits-section,
+.methodology-section,
+.delivery-section,
+.variables-section,
+.pricing-section,
+.clients-section {
+    margin-bottom: 3rem;
+}
+
+/* Modern Card Styles */
+.info-card,
+.benefit-card,
+.step-card,
+.industry-card,
+.pricing-card,
+.testimonial-card,
+.team-member-card,
+.highlight-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover,
+.benefit-card:hover,
+.step-card:hover,
+.industry-card:hover,
+.pricing-card:hover,
+.testimonial-card:hover,
+.team-member-card:hover,
+.highlight-card:hover,
+.sidebar-widget:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Modern Icon Styles */
+.info-icon,
+.benefit-icon,
+.industry-icon,
+.feature-icon,
+.method-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: rgba(var(--primary-rgb), 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Modern Section Headers */
+.intro-section h2,
+.benefits-section h2,
+.methodology-section h2,
+.delivery-section h2,
+.variables-section h2,
+.clients-section h2,
+.pricing-section h2,
+.team-section h2,
+.testimonials-section h2,
+.features-section h2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.75rem;
+}
+
+.intro-section h2 i,
+.benefits-section h2 i,
+.methodology-section h2 i,
+.delivery-section h2 i,
+.variables-section h2 i,
+.clients-section h2 i,
+.pricing-section h2 i,
+.team-section h2 i,
+.testimonials-section h2 i,
+.features-section h2 i {
+    margin-right: 0.75rem;
+    color: var(--primary-color);
+}
+
+/* Modern CTA Box Styling */
+.cta-box {
+    background: linear-gradient(135deg, #166e36 0%, #1d8c45 35%, #28a956 50%, #4eb973 100%);
+    color: white;
+    padding: 2.5rem;
+    border-radius: 8px;
+    text-align: center;
+    margin: 3rem 0;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.cta-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.cta-box h3 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.cta-box p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+    font-size: 1.1rem;
+}
+
+.cta-box .btn {
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    color: #1d8c45;
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.cta-box .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    background-color: #f8f9fa;
+}
+
+/* Modern Sidebar Styling */
+.sidebar-widget {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar-widget h3 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.sidebar-widget h3 i {
+    margin-right: 0.5rem;
 }
