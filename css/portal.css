@@ -1,0 +1,775 @@
+/* 
+ * AWIS Weather Services - Member Portal Styles
+ * Matches the main site green theme
+ */
+
+:root {
+    --primary-color: #1e88e5;
+    --primary-rgb: 30, 136, 229;
+    --primary-dark: #1565c0;
+    --primary-light: #64b5f6;
+    --secondary-color: #26a69a;
+    --secondary-dark: #00796b;
+    --success-color: #28a745;
+    --muted-color: #6c757d;
+    --dark-color: #263238;
+    --light-color: #eceff1;
+}
+
+/* Auth Container Styles */
+.auth-container {
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.auth-tabs {
+    display: flex;
+    background-color: var(--light-color);
+    border-bottom: 1px solid var(--gray-300);
+}
+
+.auth-tab {
+    flex: 1;
+    padding: 1rem;
+    text-align: center;
+    background: none;
+    border: none;
+    font-weight: 600;
+    color: var(--gray-600);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.auth-tab.active {
+    color: #1d8c45;
+    position: relative;
+    font-weight: 600;
+}
+
+.auth-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(135deg, #166e36 0%, #1d8c45 35%, #28a956 50%, #4eb973 100%);
+}
+
+.auth-form-container {
+    padding: 2rem;
+}
+
+.auth-form {
+    display: none;
+}
+
+.auth-form.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+}
+
+.remember-me input {
+    margin-right: 0.5rem;
+}
+
+.forgot-password {
+    color: #1d8c45;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+    color: #166e36;
+}
+
+.form-agreement {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.form-agreement input {
+    margin-right: 0.5rem;
+    margin-top: 0.3rem;
+}
+
+.form-agreement label {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.form-agreement a {
+    color: #1d8c45;
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* Auth Features Section */
+.auth-features {
+    margin-top: 3rem;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.auth-feature-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Dashboard Styles */
+.dashboard-hero {
+    background: linear-gradient(135deg, #166e36 0%, #1d8c45 35%, #28a956 50%, #4eb973 100%);
+    padding: 3rem 0;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.dashboard-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.dashboard-welcome {
+    position: relative;
+    z-index: 1;
+}
+
+.dashboard-welcome h1 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.dashboard-welcome p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.dashboard-section {
+    padding: 3rem 0;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 2rem;
+}
+
+.dashboard-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.user-profile-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.user-avatar {
+    font-size: 4rem;
+    color: var(--gray-400);
+    margin-bottom: 1rem;
+}
+
+.user-info h3 {
+    margin-bottom: 0.25rem;
+}
+
+.user-company, .user-email {
+    color: var(--gray-600);
+    margin-bottom: 0.25rem;
+}
+
+.account-status {
+    margin-top: 1rem;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.status-badge.premium {
+    background-color: #ffd700;
+    color: #856404;
+}
+
+.dashboard-nav {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.dashboard-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashboard-nav li {
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.dashboard-nav li:last-child {
+    border-bottom: none;
+}
+
+.dashboard-nav a {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.dashboard-nav a i {
+    margin-right: 0.75rem;
+    color: var(--gray-600);
+    transition: color 0.3s ease;
+}
+
+.dashboard-nav li.active a {
+    background-color: rgba(29, 140, 69, 0.1);
+    color: #1d8c45;
+    font-weight: 500;
+}
+
+.dashboard-nav li.active a i {
+    color: #1d8c45;
+}
+
+.dashboard-nav a:hover {
+    background-color: var(--gray-100);
+}
+
+.dashboard-section-content {
+    display: none;
+}
+
+.dashboard-section-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.section-header h2 {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.section-header h2 i {
+    margin-right: 0.75rem;
+    color: #1d8c45;
+}
+
+.search-filter {
+    display: flex;
+    gap: 1rem;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.search-bar input {
+    padding: 0.6rem 1rem 0.6rem 2.5rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 4px;
+    min-width: 250px;
+}
+
+.search-bar button {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--gray-500);
+    cursor: pointer;
+}
+
+.filter-dropdown {
+    position: relative;
+}
+
+.filter-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.filter-options {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    padding: 1rem;
+    z-index: 10;
+    display: none;
+}
+
+.filter-options.active {
+    display: block;
+}
+
+.filter-options label {
+    display: block;
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.feature-icon,
+.product-icon {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(29, 140, 69, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #1d8c45;
+    flex-shrink: 0;
+}
+
+.product-content {
+    flex: 1;
+}
+
+.product-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.product-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-type {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1d8c45;
+    background-color: rgba(29, 140, 69, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+.product-date {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+}
+
+.product-description {
+    margin-bottom: 0;
+    color: var(--gray-700);
+}
+
+.product-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.pagination-prev,
+.pagination-next {
+    background: none;
+    border: none;
+    color: #1d8c45;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.pagination-prev:disabled,
+.pagination-next:disabled {
+    color: var(--gray-400);
+    cursor: not-allowed;
+}
+
+.pagination-numbers {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0 1rem;
+}
+
+.pagination-numbers button {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination-numbers button.active {
+    background-color: #1d8c45;
+    color: white;
+}
+
+.subscriptions-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.subscription-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subscription-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.subscription-header {
+    padding: 1.5rem;
+    background-color: var(--gray-100);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subscription-header h3 {
+    margin-bottom: 0;
+    font-size: 1.2rem;
+}
+
+.subscription-status {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.2rem 0.75rem;
+    border-radius: 50px;
+}
+
+.subscription-status.active {
+    background-color: rgba(29, 140, 69, 0.1);
+    color: #1d8c45;
+}
+
+.subscription-details {
+    padding: 1.5rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.subscription-info {
+    flex: 1;
+}
+
+.info-item {
+    margin-bottom: 1rem;
+}
+
+.info-item .label {
+    display: block;
+    color: var(--gray-600);
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+.info-item .value {
+    font-weight: 600;
+}
+
+.subscription-features {
+    flex: 1;
+}
+
+.subscription-features h4 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.subscription-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.subscription-features li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.subscription-features li i {
+    color: #1d8c45;
+    margin-right: 0.5rem;
+}
+
+.subscription-actions {
+    padding: 0 1.5rem 1.5rem;
+    text-align: right;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #166e36 0%, #1d8c45 35%, #28a956 50%, #4eb973 100%);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: white;
+    color: #1d8c45;
+    border: 1px solid #1d8c45;
+    border-radius: 4px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(29, 140, 69, 0.1);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.btn-text {
+    background: none;
+    border: none;
+    color: #1d8c45;
+    padding: 0;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.btn-text:hover {
+    color: #166e36;
+    text-decoration: underline;
+}
+
+/* User menu in header */
+.user-menu {
+    position: relative;
+}
+
+.user-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.user-toggle i {
+    font-size: 1.25rem;
+}
+
+.user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    padding: 0.5rem 0;
+    z-index: 100;
+    display: none;
+}
+
+.user-dropdown.active {
+    display: block;
+}
+
+.user-dropdown li {
+    margin: 0;
+}
+
+.user-dropdown a {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    color: var(--gray-700);
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.user-dropdown a:hover {
+    background-color: var(--gray-100);
+}
+
+.user-dropdown a i {
+    margin-right: 0.75rem;
+    width: 20px;
+    text-align: center;
+    color: var(--gray-600);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .dashboard-sidebar {
+        margin-bottom: 2rem;
+    }
+    
+    .subscription-details {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .search-filter {
+        width: 100%;
+    }
+    
+    .search-bar {
+        flex: 1;
+    }
+    
+    .search-bar input {
+        width: 100%;
+    }
+    
+    .product-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .product-actions {
+        width: 100%;
+        justify-content: flex-end;
+        margin-top: 1rem;
+    }
+}

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Settings - AWIS Weather Services</title>
+    <meta name="description" content="Manage your AWIS Weather Services account settings and profile information.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/portal.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <span class="logo-text">AWIS</span>
+                    <span class="logo-tagline">Weather Services</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#industries">Industries</a></li>
+                    <li><a href="historical-data.html">Historical Data</a></li>
+                    <li><a href="forecasts.html">Forecasts</a></li>
+                    <li><a href="gocast.html">GoCast</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="btn btn-primary">Contact Us</a></li>
+                    <li class="user-menu active">
+                        <a href="#" class="user-toggle">
+                            <span class="user-name">John Doe</span>
+                            <i class="fas fa-user-circle"></i>
+                        </a>
+                        <ul class="user-dropdown">
+                            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                            <li><a href="profile.html" class="active"><i class="fas fa-user-edit"></i> Edit Profile</a></li>
+                            <li><a href="#" id="logout-link"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="dashboard-hero">
+        <div class="container">
+            <div class="dashboard-welcome">
+                <h1>Account Settings</h1>
+                <p>Manage your profile information and account preferences</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section dashboard-section">
+        <div class="container">
+            <div class="dashboard-grid">
+                <div class="dashboard-sidebar">
+                    <div class="user-profile-card">
+                        <div class="user-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="user-info">
+                            <h3 class="user-fullname">John Doe</h3>
+                            <p class="user-company">Acme Corporation</p>
+                            <p class="user-email">john.doe@acme.com</p>
+                        </div>
+                        <div class="account-status">
+                            <span class="status-badge premium">Premium</span>
+                        </div>
+                    </div>
+                    
+                    <nav class="dashboard-nav">
+                        <ul>
+                            <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                            <li class="active"><a href="#profile-section"><i class="fas fa-user"></i> Profile Information</a></li>
+                            <li><a href="#password-section"><i class="fas fa-lock"></i> Change Password</a></li>
+                            <li><a href="#preferences-section"><i class="fas fa-cog"></i> Preferences</a></li>
+                            <li><a href="#billing-section"><i class="fas fa-credit-card"></i> Billing Information</a></li>
+                            <li><a href="#notification-section"><i class="fas fa-bell"></i> Notifications</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                
+                <div class="dashboard-main">
+                    <div class="dashboard-section-content active" id="profile-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-user"></i> Profile Information</h2>
+                        </div>
+                        
+                        <div class="content-card">
+                            <form class="modern-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="profile-firstname">First Name</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-user"></i>
+                                            <input type="text" id="profile-firstname" name="firstname" value="John" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="profile-lastname">Last Name</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-user"></i>
+                                            <input type="text" id="profile-lastname" name="lastname" value="Doe" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="profile-email">Email Address</label>
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-envelope"></i>
+                                        <input type="email" id="profile-email" name="email" value="john.doe@acme.com" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="profile-company">Company Name</label>
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-building"></i>
+                                        <input type="text" id="profile-company" name="company" value="Acme Corporation">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="profile-phone">Phone Number</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-phone"></i>
+                                            <input type="tel" id="profile-phone" name="phone" value="(555) 123-4567">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="profile-position">Position</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-briefcase"></i>
+                                            <input type="text" id="profile-position" name="position" value="Operations Manager">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="profile-industry">Industry</label>
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-industry"></i>
+                                        <select id="profile-industry" name="industry">
+                                            <option value="">Select your industry</option>
+                                            <option value="agriculture" selected>Agriculture</option>
+                                            <option value="energy">Energy</option>
+                                            <option value="construction">Construction</option>
+                                            <option value="transportation">Transportation</option>
+                                            <option value="events">Event Management</option>
+                                            <option value="insurance">Insurance</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-section-content" id="password-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-lock"></i> Change Password</h2>
+                        </div>
+                        
+                        <div class="content-card">
+                            <form class="modern-form">
+                                <div class="form-group">
+                                    <label for="current-password">Current Password</label>
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-lock"></i>
+                                        <input type="password" id="current-password" name="current-password" required>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="new-password">New Password</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-lock"></i>
+                                            <input type="password" id="new-password" name="new-password" required>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="confirm-password">Confirm New Password</label>
+                                        <div class="input-with-icon">
+                                            <i class="fas fa-lock"></i>
+                                            <input type="password" id="confirm-password" name="confirm-password" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="password-requirements">
+                                    <h4>Password Requirements:</h4>
+                                    <ul>
+                                        <li>At least 8 characters long</li>
+                                        <li>Must contain at least one uppercase letter</li>
+                                        <li>Must contain at least one number</li>
+                                        <li>Must contain at least one special character</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Update Password</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-section-content" id="preferences-section">
+                        <div class="section-header">
+                            <h2><i class="fas fa-cog"></i> Preferences</h2>
+                        </div>
+                        
+                        <div class="content-card">
+                            <form class="modern-form">
+                                <div class="form-group">
+                                    <label>Temperature Units</label>
+                                    <div class="toggle-options">
+                                        <label class="toggle-option">
+                                            <input type="radio" name="temp-unit" value="fahrenheit" checked>
+                                            <span>Fahrenheit (°F)</span>
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="temp-unit" value="celsius">
+                                            <span>Celsius (°C)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Wind Speed Units</label>
+                                    <div class="toggle-options">
+                                        <label class="toggle-option">
+                                            <input type="radio" name="wind-unit" value="mph" checked>
+                                            <span>Miles per hour (mph)</span>
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="wind-unit" value="kmh">
+                                            <span>Kilometers per hour (km/h)</span>
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="wind-unit" value="knots">
+                                            <span>Knots (kn)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Precipitation Units</label>
+                                    <div class="toggle-options">
+                                        <label class="toggle-option">
+                                            <input type="radio" name="precip-unit" value="inches" checked>
+                                            <span>Inches (in)</span>
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="precip-unit" value="mm">
+                                            <span>Millimeters (mm)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Time Format</label>
+                                    <div class="toggle-options">
+                                        <label class="toggle-option">
+                                            <input type="radio" name="time-format" value="12h" checked>
+                                            <span>12-hour (AM/PM)</span>
+                                        </label>
+                                        <label class="toggle-option">
+                                            <input type="radio" name="time-format" value="24h">
+                                            <span>24-hour</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label>Date Format</label>
+                                    <div class="input-with-icon">
+                                        <i class="fas fa-calendar"></i>
+                                        <select name="date-format">
+                                            <option value="mm-dd-yyyy" selected>MM-DD-YYYY</option>
+                                            <option value="dd-mm-yyyy">DD-MM-YYYY</option>
+                                            <option value="yyyy-mm-dd">YYYY-MM-DD</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Save Preferences</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span class="logo-text">AWIS</span>
+                        <span class="logo-tagline">Weather Services</span>
+                    </div>
+                    <p>Providing accurate weather data, forecasts, and consulting services since 1972.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="historical-data.html">Historical Weather Data</a></li>
+                        <li><a href="forecasts.html">Weather Forecasts</a></li>
+                        <li><a href="#">Lightning Detection</a></li>
+                        <li><a href="#">Consulting Services</a></li>
+                        <li><a href="gocast.html">AWIS GoCast</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Industries</h3>
+                    <ul>
+                        <li><a href="#">Agriculture</a></li>
+                        <li><a href="#">Energy</a></li>
+                        <li><a href="#">Construction</a></li>
+                        <li><a href="#">Freight & Transportation</a></li>
+                        <li><a href="#">Event Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Auburn, AL</p>
+                        <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@awis.com">info@awis.com</a></p>
+                    </address>
+                    <a href="contact.html" class="btn btn-secondary btn-sm">Contact Form</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AWIS Weather Services. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>
