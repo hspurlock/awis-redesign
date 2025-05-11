@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoCast - AWIS Weather Services</title>
+    <meta name="description" content="AWIS GoCast provides real-time weather data and forecasting tools for precise decision-making across industries.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* GoCast Page Specific Styles */
+        .hero-banner {
+            background: linear-gradient(135deg, #1e5799 0%, #207cca 35%, #2989d8 50%, #7db9e8 100%);
+            position: relative;
+            overflow: hidden;
+            color: white;
+            padding: 6rem 0;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../images/database.png');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .hero-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .hero-cta {
+            display: inline-block;
+            background-color: white;
+            color: #1e88e5;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            background-color: #f8f9fa;
+        }
+        
+        .features-section {
+            padding: 5rem 0;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            overflow: visible;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            margin-top: 35px;
+            padding-top: 20px;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: -55px auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e88e5 0%, #64b5f6 100%);
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            color: white;
+            font-size: 1.75rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .feature-content {
+            padding: 0 1.5rem 1.5rem;
+            text-align: center;
+        }
+        
+        .feature-content h3 {
+            color: #1e88e5;
+            margin-bottom: 0.75rem;
+        }
+        
+        .industries-section {
+            background-color: #f8f9fa;
+            padding: 5rem 0;
+        }
+        
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .industry-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .industry-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #26a69a 0%, #80cbc4 100%);
+            border-radius: 50%;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .pricing-section {
+            padding: 5rem 0;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .pricing-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .pricing-card.featured {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border: 2px solid #1e88e5;
+        }
+        
+        .pricing-header {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 2rem;
+            text-align: center;
+        }
+        
+        .pricing-card.featured .pricing-header {
+            background: linear-gradient(135deg, #1e88e5 0%, #64b5f6 100%);
+            color: white;
+        }
+        
+        .pricing-card.featured .pricing-header h3 {
+            color: white;
+        }
+        
+        .price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 0.5rem;
+        }
+        
+        .pricing-features {
+            padding: 2rem;
+        }
+        
+        .pricing-features ul li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .pricing-features ul li i {
+            position: absolute;
+            left: 0;
+            top: 0.25rem;
+            color: #26a69a;
+        }
+        
+        .pricing-cta {
+            padding: 0 2rem 2rem;
+            text-align: center;
+        }
+        
+        .testimonials-section {
+            background-color: #f8f9fa;
+            padding: 5rem 0;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-quote {
+            position: relative;
+            margin-bottom: 1.5rem;
+            padding: 0 1rem;
+        }
+        
+        .testimonial-quote i:first-child {
+            position: absolute;
+            top: -0.5rem;
+            left: -0.5rem;
+            color: #e0e0e0;
+            font-size: 1.5rem;
+        }
+        
+        .testimonial-quote i:last-child {
+            position: absolute;
+            bottom: -0.5rem;
+            right: -0.5rem;
+            color: #e0e0e0;
+            font-size: 1.5rem;
+        }
+        
+        .testimonial-author {
+            text-align: right;
+        }
+        
+        .testimonial-author p {
+            margin-bottom: 0;
+        }
+        
+        .cta-section {
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .cta-box {
+            background: linear-gradient(135deg, #1e88e5 0%, #64b5f6 100%);
+            padding: 3rem;
+            border-radius: 12px;
+            color: white;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-box h3 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-box p {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background-color: white;
+            color: #1e88e5;
+            font-weight: 600;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            background-color: #f8f9fa;
+        }
+        
+        .sidebar-widget {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar-widget h3 {
+            margin-bottom: 1.25rem;
+            font-size: 1.25rem;
+            color: #1e88e5;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+        
+        .sidebar-widget h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, #1e88e5, #64b5f6);
+        }
+        
+        .mini-form .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .mini-form input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .mini-form input:focus {
+            border-color: #1e88e5;
+            box-shadow: 0 0 0 3px rgba(30,136,229,0.1);
+            outline: none;
+        }
+        
+        .resource-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .resource-links a {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-links a i {
+            margin-right: 0.75rem;
+            color: #1e88e5;
+        }
+        
+        .resource-links a:hover {
+            color: #1e88e5;
+            transform: translateX(5px);
+        }
+        
+        .resources-section {
+            padding: 3rem 0;
+            background-color: white;
+        }
+        
+        .sidebar-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .sidebar-flex .sidebar-widget {
+            flex: 1;
+            min-width: 300px;
+            max-width: 450px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .pricing-card.featured {
+                transform: scale(1);
+                margin-top: 2rem;
+                margin-bottom: 2rem;
+            }
+            
+            .sidebar-flex {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .sidebar-flex .sidebar-widget {
+                width: 100%;
+            }
+        }
+        
+        /* Fix for footer layout */
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .mt-4 {
+            margin-top: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .footer-columns {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .footer-columns {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <span class="logo-text">AWIS</span>
+                    <span class="logo-tagline">Weather Services</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#industries">Industries</a></li>
+                    <li><a href="historical-data.html">Historical Data</a></li>
+                    <li><a href="forecasts.html">Forecasts</a></li>
+                    <li><a href="gocast.html" class="active">GoCast</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="btn btn-primary">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <div class="container">
+            <div class="hero-content">
+                <h1>AWIS GoCast</h1>
+                <p>Advanced weather intelligence platform delivering real-time decision making power to your business</p>
+                <a href="contact.html" class="hero-cta">Request a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <div class="text-center">
+                <h2>The Power of GoCast</h2>
+                <p class="section-intro">AWIS GoCast is our premium weather intelligence platform designed to provide real-time weather data, customized forecasts, and analytics tools to help businesses make informed decisions with confidence.</p>
+            </div>
+            
+            <div class="text-center mt-5 mb-5">
+                <img src="../images/solar_header_new.png" alt="GoCast Dashboard Interface" class="responsive-img" style="max-width: 800px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15);">
+            </div>
+            
+            <h2 class="text-center">Key Features</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tachometer-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Interactive Dashboard</h3>
+                        <p>Customizable dashboard that displays the weather parameters most important to your business with intuitive visualization tools.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Real-Time Alerts</h3>
+                        <p>Instant notifications for severe weather events, temperature thresholds, and other critical conditions affecting your operations.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>High-Resolution Maps</h3>
+                        <p>Detailed weather maps with multiple layers for temperature, precipitation, wind, and more with precision down to 1km resolution.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Trend Analysis</h3>
+                        <p>Historical data comparison and trend visualization to identify patterns and make informed predictions with confidence.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-export"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Data Export</h3>
+                        <p>Export weather data in multiple formats compatible with your analysis tools and systems for seamless integration.</p>
+                    </div>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h3>API Integration</h3>
+                        <p>Seamlessly integrate GoCast data with your existing business applications and systems through our robust API.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="industries-section">
+        <div class="container">
+            <div class="text-center">
+                <h2>Industries Served by GoCast</h2>
+                <p class="section-intro">GoCast is designed to meet the specific needs of various industries, providing tailored weather intelligence solutions for your specific operational challenges.</p>
+            </div>
+            
+            <div class="industry-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <h3>Agriculture</h3>
+                    <p>Frost alerts, growing degree days, precipitation forecasts, and other agricultural-specific parameters to maximize yield and minimize weather-related losses.</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Energy</h3>
+                    <p>Load forecasting support, temperature trends, and renewable energy production forecasts to optimize energy distribution and generation planning.</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Transportation</h3>
+                    <p>Route-specific weather alerts, road condition forecasts, and travel impact assessments to ensure safe and efficient logistics operations.</p>
+                </div>
+                
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Construction</h3>
+                    <p>Worksite weather monitoring, rain day calculations, and project timeline impact analysis to avoid costly delays and safety hazards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-section">
+        <div class="container">
+            <div class="text-center">
+                <h2>GoCast Packages</h2>
+                <p class="section-intro">Choose the plan that fits your business needs with flexible options for businesses of any size.</p>
+            </div>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Basic</h3>
+                        <p class="price">Starting at $249/month</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> Real-time data access</li>
+                            <li><i class="fas fa-check"></i> Standard dashboard</li>
+                            <li><i class="fas fa-check"></i> Basic alerts</li>
+                            <li><i class="fas fa-check"></i> Up to 10 locations</li>
+                            <li><i class="fas fa-check"></i> Email support</li>
+                            <li><i class="fas fa-check"></i> Weekly data updates</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-cta">
+                        <a href="contact.html" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-card featured">
+                    <div class="pricing-header">
+                        <h3>Professional</h3>
+                        <p class="price">Starting at $499/month</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> All Basic features</li>
+                            <li><i class="fas fa-check"></i> Custom dashboard</li>
+                            <li><i class="fas fa-check"></i> Advanced alerts</li>
+                            <li><i class="fas fa-check"></i> Up to 50 locations</li>
+                            <li><i class="fas fa-check"></i> API access</li>
+                            <li><i class="fas fa-check"></i> Priority support</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-cta">
+                        <a href="contact.html" class="btn btn-primary">Get Started</a>
+                    </div>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Enterprise</h3>
+                        <p class="price">Custom Pricing</p>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li><i class="fas fa-check"></i> All Professional features</li>
+                            <li><i class="fas fa-check"></i> Unlimited locations</li>
+                            <li><i class="fas fa-check"></i> Custom integrations</li>
+                            <li><i class="fas fa-check"></i> Dedicated support</li>
+                            <li><i class="fas fa-check"></i> Consulting services</li>
+                            <li><i class="fas fa-check"></i> On-site training</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-cta">
+                        <a href="contact.html" class="btn btn-secondary">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="text-center">
+                <h2>What Our Clients Say</h2>
+                <p class="section-intro">Discover how GoCast has helped businesses across industries make better weather-informed decisions.</p>
+            </div>
+            
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>GoCast has transformed our operational efficiency by providing precise weather intelligence that helps us optimize our resources and reduce weather-related losses by over 30% in the first season.</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <p><strong>Operations Director</strong></p>
+                        <p>Leading Agricultural Company</p>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>The custom alerts and forecasting capabilities of GoCast have helped us improve our energy demand predictions and optimize our grid management, resulting in significant cost savings.</p>
+                        <i class="fas fa-quote-right"></i>
+                    </div>
+                    <div class="testimonial-author">
+                        <p><strong>Energy Analyst</strong></p>
+                        <p>Regional Utility Provider</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-box">
+                <h3>Ready to experience the power of GoCast?</h3>
+                <p>Schedule a personalized demo with our team today and discover how GoCast can transform your business operations.</p>
+                <a href="contact.html" class="cta-btn">Request Demo</a>
+            </div>
+        </div>
+    </section>
+    <section class="resources-section">
+        <div class="container">
+            <div class="sidebar-flex">
+                <div class="sidebar-widget">
+                    <h3>Request More Info</h3>
+                    <form class="mini-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Company">
+                        </div>
+                        <button type="submit" class="btn btn-secondary full-width">Send Request</button>
+                    </form>
+                </div>
+                
+                <div class="sidebar-widget">
+                    <h3>Resources</h3>
+                    <ul class="resource-links">
+                        <li><a href="#"><i class="fas fa-file-pdf"></i> GoCast Brochure</a></li>
+                        <li><a href="#"><i class="fas fa-play-circle"></i> Demo Video</a></li>
+                        <li><a href="#"><i class="fas fa-book"></i> User Guide</a></li>
+                        <li><a href="#"><i class="fas fa-question-circle"></i> FAQs</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span class="logo-text">AWIS</span>
+                        <span class="logo-tagline">Weather Services</span>
+                    </div>
+                    <p>Providing accurate weather data, forecasts, and consulting services since 1972.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="historical-data.html">Historical Weather Data</a></li>
+                        <li><a href="forecasts.html">Weather Forecasts</a></li>
+                        <li><a href="#">Lightning Detection</a></li>
+                        <li><a href="#">Consulting Services</a></li>
+                        <li><a href="gocast.html" class="active">AWIS GoCast</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Industries</h3>
+                    <ul>
+                        <li><a href="#">Agriculture</a></li>
+                        <li><a href="#">Energy</a></li>
+                        <li><a href="#">Construction</a></li>
+                        <li><a href="#">Freight & Transportation</a></li>
+                        <li><a href="#">Event Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Auburn, AL</p>
+                        <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@awis.com">info@awis.com</a></p>
+                    </address>
+                    <a href="contact.html" class="btn btn-secondary btn-sm">Contact Form</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AWIS Weather Services. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

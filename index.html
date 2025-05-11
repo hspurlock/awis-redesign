@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWIS Weather Services | Modern Weather Data & Forecasting</title>
+    <meta name="description" content="AWIS provides accurate weather data, unique forecasts, & custom packaged weather solutions to agriculture, energy, retail, and industry.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <span class="logo-text">AWIS</span>
+                    <span class="logo-tagline">Weather Services</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#industries">Industries</a></li>
+                    <li><a href="pages/historical-data.html">Historical Data</a></li>
+                    <li><a href="pages/forecasts.html">Forecasts</a></li>
+                    <li><a href="pages/gocast.html">GoCast</a></li>
+                    <li><a href="pages/about.html">About</a></li>
+                    <li><a href="pages/contact.html" class="btn btn-primary">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Advanced Weather Intelligence Solutions</h1>
+                <p>Precision weather data, forecasts, and consulting services custom-tailored for your industry needs</p>
+                <div class="hero-buttons">
+                    <a href="pages/contact.html" class="btn btn-primary">Get Started</a>
+                    <a href="#services" class="btn btn-secondary">Explore Services</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/eventForecasting.jpg" alt="Advanced Weather Intelligence Solutions" class="responsive-img">
+                <div class="weather-card">
+                    <div class="weather-icon">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <div class="weather-info">
+                        <span class="temp">72°F</span>
+                        <span class="location">Auburn, AL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Services</h2>
+                <p>Comprehensive weather solutions designed for accuracy and reliability</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3>Historical Weather Data</h3>
+                    <p>Extensive worldwide historical weather database dating back to the mid-1900s for climate analytics and business intelligence.</p>
+                    <a href="pages/historical-data.html" class="btn btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Weather Forecasts</h3>
+                    <p>Precise short and long-term forecasts customized for your specific locations and business needs.</p>
+                    <a href="pages/forecasts.html" class="btn btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Detection</h3>
+                    <p>Real-time lightning notifications via text and email for event management and safety applications.</p>
+                    <a href="pages/lightning.html" class="btn btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Consulting Services</h3>
+                    <p>Expert meteorologists available for specialized climate consulting and weather-related business intelligence.</p>
+                    <a href="pages/consulting.html" class="btn btn-text">Learn More <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="industries" class="industries">
+        <div class="container">
+            <div class="section-header">
+                <h2>Industry Solutions</h2>
+                <p>Weather intelligence tailored for your specific industry</p>
+            </div>
+            <div class="industries-tabs">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" data-target="agriculture">Agriculture</button>
+                    <button class="tab-btn" data-target="energy">Energy</button>
+                    <button class="tab-btn" data-target="construction">Construction</button>
+                    <button class="tab-btn" data-target="freight">Freight</button>
+                </div>
+                <div class="tabs-content">
+                    <div class="tab-panel active" id="agriculture">
+                        <div class="tab-content">
+                            <div class="tab-text">
+                                <h3>Agriculture Weather Services</h3>
+                                <p>Staying true to our roots, AWIS continues to offer specialized Ag-Specific Weather Services to farms and fields across the country. Our senior Ag meteorologists bring decades of experience to deliver:</p>
+                                <ul>
+                                    <li>Premier Frost Freeze Alert Service</li>
+                                    <li>Customized Ag Weather Email Service</li>
+                                    <li>Precipitation forecasts and historical analysis</li>
+                                    <li>Growing season intelligence</li>
+                                </ul>
+                                <a href="pages/agriculture.html" class="btn btn-secondary">Explore Ag Services</a>
+                            </div>
+                            <div class="tab-image">
+                                <img src="images/agriculture.jpg" alt="Agriculture weather services">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-panel" id="energy">
+                        <div class="tab-content">
+                            <div class="tab-text">
+                                <h3>Energy Weather Solutions</h3>
+                                <p>AWIS provides hourly and daily weather data for load forecasting, energy model generation, and event monitoring. Our energy-specific solutions include:</p>
+                                <ul>
+                                    <li>Local forecast feeds for short and long-term planning</li>
+                                    <li>Digital feeds for models and spreadsheets</li>
+                                    <li>24/7 monitoring and support</li>
+                                    <li>Severe weather alerts and lightning detection</li>
+                                </ul>
+                                <a href="pages/energy.html" class="btn btn-secondary">Explore Energy Solutions</a>
+                            </div>
+                            <div class="tab-image">
+                                <img src="images/energy.jpg" alt="Energy weather solutions">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-panel" id="construction">
+                        <div class="tab-content">
+                            <div class="tab-text">
+                                <h3>Construction Weather Tools</h3>
+                                <p>AWIS can be your source for comprehensive construction weather services including:</p>
+                                <ul>
+                                    <li>Historical Rainfall Data near your job site</li>
+                                    <li>Rain Day calculations</li>
+                                    <li>Daily monitoring of rainfall amounts</li>
+                                    <li>Severe weather notification and lightning alerts</li>
+                                    <li>Project-specific report generation</li>
+                                </ul>
+                                <a href="pages/construction.html" class="btn btn-secondary">Explore Construction Tools</a>
+                            </div>
+                            <div class="tab-image">
+                                <img src="images/construction.jpg" alt="Construction weather tools">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-panel" id="freight">
+                        <div class="tab-content">
+                            <div class="tab-text">
+                                <h3>Freight Transportation Weather</h3>
+                                <p>Whether by land or by sea, AWIS provides custom weather solutions for all transportation needs:</p>
+                                <ul>
+                                    <li>Pharmaceutical transportation solutions</li>
+                                    <li>Complete freight line terminal services</li>
+                                    <li>Specific location forecasts</li>
+                                    <li>Route planning intelligence</li>
+                                </ul>
+                                <a href="pages/freight.html" class="btn btn-secondary">Explore Freight Solutions</a>
+                            </div>
+                            <div class="tab-image">
+                                <img src="images/freight.jpg" alt="Freight transportation weather">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>AWIS GoCast — One-Stop Weather Platform</h2>
+                <p>Customizable web location for forecast information, severe weather alerts, and current conditions for your specific location.</p>
+                <a href="pages/gocast.html" class="btn btn-primary">Learn More About GoCast</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Trusted by Industry Leaders</h2>
+                <p>Hear what our clients have to say about our weather services</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"AWIS's customized weather alerts have been invaluable for our farming operations. Their frost alerts have saved our crops multiple times."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Robert Johnson</h4>
+                            <p>Agricultural Director, Harvest Farms</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"The historical weather data provided by AWIS has significantly improved our energy forecasting models and operational efficiency."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Jennifer Williams</h4>
+                            <p>Analytics Manager, PowerGrid Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <p>"As a construction manager, AWIS's lightning detection system has been crucial for maintaining site safety and scheduling efficiency."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <p>Project Manager, BuildTech Constructions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="prev-btn" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="next-btn" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span class="logo-text">AWIS</span>
+                        <span class="logo-tagline">Weather Services</span>
+                    </div>
+                    <p>Providing accurate weather data, forecasts, and consulting services since 1972.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="pages/historical-data.html">Historical Weather Data</a></li>
+                        <li><a href="pages/forecasts.html">Weather Forecasts</a></li>
+                        <li><a href="pages/lightning.html">Lightning Detection</a></li>
+                        <li><a href="pages/consulting.html">Consulting Services</a></li>
+                        <li><a href="pages/gocast.html">AWIS GoCast</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Industries</h3>
+                    <ul>
+                        <li><a href="pages/agriculture.html">Agriculture</a></li>
+                        <li><a href="pages/energy.html">Energy</a></li>
+                        <li><a href="pages/construction.html">Construction</a></li>
+                        <li><a href="pages/freight.html">Freight & Transportation</a></li>
+                        <li><a href="pages/event-management.html">Event Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Auburn, AL</p>
+                        <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@awis.com">info@awis.com</a></p>
+                    </address>
+                    <a href="pages/contact.html" class="btn btn-secondary btn-sm">Contact Form</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AWIS Weather Services. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="pages/privacy.html">Privacy Policy</a></li>
+                    <li><a href="pages/terms.html">Terms of Service</a></li>
+                    <li><a href="pages/sitemap.html">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

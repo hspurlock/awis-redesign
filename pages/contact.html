@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AWIS Weather Services</title>
+    <meta name="description" content="Contact AWIS Weather Services for weather data, forecasts, and custom solutions for your business needs.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="../index.html">
+                    <span class="logo-text">AWIS</span>
+                    <span class="logo-tagline">Weather Services</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="../index.html#industries">Industries</a></li>
+                    <li><a href="historical-data.html">Historical Data</a></li>
+                    <li><a href="forecasts.html">Forecasts</a></li>
+                    <li><a href="gocast.html">GoCast</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html" class="btn btn-primary active">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="hero-image-container">
+                <img src="../images/web_weather_header2.png" alt="Contact AWIS Weather Services" class="hero-image">
+            </div>
+            <h1>Contact Our Team</h1>
+            <p>Get in touch with our meteorologists for custom weather solutions</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="contact-intro">
+                <div class="intro-section text-center">
+                    <h2><i class="fas fa-paper-plane"></i> Get in Touch</h2>
+                    <p class="lead-text">Our team of expert meteorologists is ready to develop a custom weather solution for your business needs.</p>
+                </div>
+                
+                <div class="contact-method-cards">
+                    <div class="method-card">
+                        <div class="method-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <h3>Call Us</h3>
+                        <p>(334) 826-2149</p>
+                        <span class="availability">Monday-Friday, 8am-5pm CT</span>
+                    </div>
+                    
+                    <div class="method-card">
+                        <div class="method-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p><a href="mailto:info@awis.com">info@awis.com</a></p>
+                        <span class="availability">Response within 24 hours</span>
+                    </div>
+                    
+                    <div class="method-card">
+                        <div class="method-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <h3>Visit Us</h3>
+                        <p>Auburn, AL</p>
+                        <span class="availability">By appointment only</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-main">
+                <div class="contact-form-container">
+                    <div class="form-header">
+                        <h2>Send Us a Message</h2>
+                        <p>Fill out the form below and one of our meteorologists will get back to you promptly.</p>
+                    </div>
+                    
+                    <form class="contact-form modern-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="company">Company</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-building"></i>
+                                    <input type="text" id="company" name="company" placeholder="Your company">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-envelope"></i>
+                                    <input type="email" id="email" name="email" placeholder="Your email address" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-phone"></i>
+                                    <input type="tel" id="phone" name="phone" placeholder="Your phone number">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="subject">Subject</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-tag"></i>
+                                <input type="text" id="subject" name="subject" placeholder="How can we help you?" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="interest">I'm interested in:</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-list"></i>
+                                <select id="interest" name="interest" required>
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="historical">Historical Weather Data</option>
+                                    <option value="forecasts">Weather Forecasts</option>
+                                    <option value="gocast">AWIS GoCast Platform</option>
+                                    <option value="consulting">Weather Consulting</option>
+                                    <option value="other">Other Services</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label for="message">Message</label>
+                            <div class="input-with-icon textarea-icon">
+                                <i class="fas fa-comment"></i>
+                                <textarea id="message" name="message" rows="5" placeholder="Tell us about your weather data needs" required></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">Send Message <i class="fas fa-paper-plane"></i></button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="contact-sidebar">
+                    <div class="connect-card">
+                        <h3><i class="fas fa-users"></i> Why Work With Us</h3>
+                        <ul class="benefit-list">
+                            <li><i class="fas fa-check-circle"></i> Direct access to experienced meteorologists</li>
+                            <li><i class="fas fa-check-circle"></i> Custom solutions for your specific industry needs</li>
+                            <li><i class="fas fa-check-circle"></i> Quality-controlled data you can trust</li>
+                            <li><i class="fas fa-check-circle"></i> Rapid response to your weather intelligence needs</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="connect-card social-card">
+                        <h3><i class="fas fa-share-alt"></i> Connect With Us</h3>
+                        <p>Follow us on social media for weather news, updates and tips.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h3>How quickly can I get historical weather data?</h3>
+                    <p>In most cases, we can deliver historical weather data within 24-48 hours of receiving your request, depending on the complexity and volume of data needed.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you offer custom weather forecasts?</h3>
+                    <p>Yes, we specialize in creating custom weather forecasts tailored to your specific industry and location needs.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What format is your data delivered in?</h3>
+                    <p>We provide data in various formats, including CSV, JSON, and other custom formats as needed for your systems.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you offer consulting services?</h3>
+                    <p>Yes, our meteorologists are available for various consulting services to help you understand and leverage weather data for your business.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <span class="logo-text">AWIS</span>
+                        <span class="logo-tagline">Weather Services</span>
+                    </div>
+                    <p>Providing accurate weather data, forecasts, and consulting services since 1972.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="historical-data.html">Historical Weather Data</a></li>
+                        <li><a href="forecasts.html">Weather Forecasts</a></li>
+                        <li><a href="#">Lightning Detection</a></li>
+                        <li><a href="#">Consulting Services</a></li>
+                        <li><a href="gocast.html">AWIS GoCast</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Industries</h3>
+                    <ul>
+                        <li><a href="#">Agriculture</a></li>
+                        <li><a href="#">Energy</a></li>
+                        <li><a href="#">Construction</a></li>
+                        <li><a href="#">Freight & Transportation</a></li>
+                        <li><a href="#">Event Management</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt"></i> Auburn, AL</p>
+                        <p><i class="fas fa-phone"></i> (123) 456-7890</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@awis.com">info@awis.com</a></p>
+                    </address>
+                    <a href="contact.html" class="btn btn-secondary btn-sm active">Contact Form</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AWIS Weather Services. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
